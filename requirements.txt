@@ -1,4 +1,4 @@
-opencv-python>=4.5.3.56
+opencv-python>=4.4.0.46
 opencv-contrib-python>=4.5.3.56
 streamlit>=0.84.2
 numpy>=1.20.3
