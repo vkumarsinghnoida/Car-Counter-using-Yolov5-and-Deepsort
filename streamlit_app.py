@@ -53,8 +53,6 @@ while cap.isOpened:
     kpi1_text.write(f"<h1 style='text-align: center; color: red;'>{int(fps)}</h1>", unsafe_allow_html=True)
     kpi2_text.write(f"<h1 style='text-align: center; color: red;'>{int(det)}</h1>", unsafe_allow_html=True)
     stframe.image(img,channels = 'BGR',use_column_width=True)
-    if cv2.waitKey(5) == 13:
-        break
     
 cap.release()
 
