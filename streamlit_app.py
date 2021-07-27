@@ -2,6 +2,7 @@ import streamlit as st
 import cv2
 from yolo import findObjects
 import tempfile
+import time
 
 st.title('Car Detector')
 st.sidebar.title('Parameters')
@@ -53,9 +54,7 @@ while cap.isOpened:
     kpi1_text.write(f"<h1 style='text-align: center; color: red;'>{int(fps)}</h1>", unsafe_allow_html=True)
     kpi2_text.write(f"<h1 style='text-align: center; color: red;'>{int(det)}</h1>", unsafe_allow_html=True)
     stframe.image(img,channels = 'BGR',use_column_width=True)
-    cv2.imshow('output', img)
-    if cv2.waitKey(0) == 13:
-            break
+    time.sleep(0.001)
     
 cap.release()
 cv2.destroyAllWindows()
