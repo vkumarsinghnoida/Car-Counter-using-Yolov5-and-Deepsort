@@ -13,7 +13,6 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 video_file_buffer = st.sidebar.file_uploader("Upload a video", type=[ "mp4", "mov",'avi','asf', 'm4v' ])
 
 tfflie = tempfile.NamedTemporaryFile(delete=False)
-codec = cv2.VideoWriter_fourcc(*'mp4v')
 
 if not video_file_buffer:
 
@@ -52,7 +51,6 @@ st.sidebar.video(tfflie.name)
 while cap.isOpened:
     
     ret, img = cap.read()    
-    result.write(img)
     det, fps = findObjects(img, conf, nms)
     kpi1_text.write(f"<h1 style='text-align: center; color: red;'>{int(fps)}</h1>", unsafe_allow_html=True)
     kpi2_text.write(f"<h1 style='text-align: center; color: red;'>{int(det)}</h1>", unsafe_allow_html=True)
@@ -61,8 +59,6 @@ while cap.isOpened:
         break
     
 cap.release()
-result.release()
-cv2.destroyAllWindows()
 
 video_file = open('output.mp4', 'rb')
 video_bytes = video_file.read()
@@ -70,4 +66,3 @@ st.video(video_bytes)
 
 
 st.stop()
-#!streamlit run untitled2.py
