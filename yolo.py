@@ -67,36 +67,3 @@ def findObjects(img, confThreshold, nmsThreshold):
     #cv.putText(img,'FPS: {0:.2f}'.format(frame_rate_calc),(30,50),cv.FONT_HERSHEY_SIMPLEX,1,(255,255,0),2,cv.LINE_AA)
     
     return len(indices), fps
-
-''' 
-while True:
-    
-    frame_rate_calc = 1
-    freq = cv.getTickFrequency()
-    t1 = cv.getTickCount()
-    
-    success, img = cap.read()
- 
-    
-    blob = cv.dnn.blobFromImage(img, 1 / 255, (whT, whT), [0, 0, 0], 1, crop=False)
-    net.setInput(blob)
-    layersNames = net.getLayerNames()
-    outputNames = [(layersNames[i[0] - 1]) for i in net.getUnconnectedOutLayers()]
-    outputs = net.forward(outputNames)
-    findObjects(outputs,img)
-    time.sleep(0)
-    
-    t2 = cv.getTickCount()
-    time1 = (t2-t1)/freq
-    frame_rate_calc= 1/time1
-    cv.putText(img,'FPS: {0:.2f}'.format(frame_rate_calc),(30,50),cv.FONT_HERSHEY_SIMPLEX,1,(255,255,0),2,cv.LINE_AA)
-
- 
-    cv.imshow('Image', img)
-    
-    if cv.waitKey(1) == 13:
-        break
-    
-    
-   ''' 
-cv.destroyAllWindows()   
