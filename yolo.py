@@ -13,7 +13,7 @@ with open(classesFile, 'rt') as f:
 print(classNames)
 ## Model Files
 modelConfiguration = "yolov4-tiny-detector.cfg"
-modelWeights = "yolov4-tiny-detector2.weights"
+modelWeights = "yolov4-tiny-detector1.weights"
 net = cv.dnn.readNetFromDarknet(modelConfiguration, modelWeights)
 net.setPreferableBackend(cv.dnn.DNN_BACKEND_OPENCV)
 net.setPreferableTarget(cv.dnn.DNN_TARGET_OPENCL_FP16)
