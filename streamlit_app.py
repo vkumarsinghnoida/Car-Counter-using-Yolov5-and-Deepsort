@@ -42,8 +42,6 @@ with kpi2:
     
 
 st.markdown("<hr/>", unsafe_allow_html=True)
-    
-result = cv2.VideoWriter('output1.mp4', codec, fps_input, (width, height))
 
 st.sidebar.text('Input Video')
 st.sidebar.video(tfflie.name)
