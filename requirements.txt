@@ -1,5 +1,0 @@
-opencv-python>=4.5.3
-opencv-contrib-python>=4.5.3
-streamlit>=0.84.2
-numpy>=1.20.3
-
