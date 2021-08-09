@@ -38,7 +38,7 @@ with kpi1:
     kpi1_text = st.markdown("0")
 
 with kpi2:
-    st.markdown("**Detected Faces**")
+    st.markdown("**Detected Cars**")
     kpi2_text = st.markdown("0")
     
 
